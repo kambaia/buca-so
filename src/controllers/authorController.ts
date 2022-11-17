@@ -4,8 +4,6 @@ class AuthorController {
 	public async listAllAuthor(req: Request, res: Response): Promise<void> {
 		const { limit }= req.query;
 		const { page }= req.query;
-		console.log(page, limit);
-	   
 		try {
 			const author = await Author.find({  }).limit(Number(limit)).skip(Number(page));
 
