@@ -7,24 +7,25 @@ class BookController {
 	   
 		try {
 			const book = await Book.find({  }).populate(
-				"Author",
+				"author",
 				"_id name"
-			).limit(Number(limit)).skip(Number(page));
+			).populate(
+				"category",
+				"_id category"
+			).populate(
+				"representativeUser",
+				"_id fullName"
+			)
+			.limit(Number(limit)).skip(Number(page));
 
 			const total = await Book.find({ }).count();
 
-			let allBook = [];
-			for (let index in book) {
-				allBook.push({
-					createdAt: book[index].createdAt,
-				});
-			}
 			res.status(200).send({
-				data: allBook,
+				data: book,
 				currentPage: Number(page),
 				hasMorePages: true,
 				lastPage: Number(page),
-				perPage: allBook.length,
+				perPage: book.length,
 				prevPageUrl: null,
 				total: total
 			});

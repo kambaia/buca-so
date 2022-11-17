@@ -110,7 +110,6 @@ class UserController {
 
 	public async saveUser(req: Request, res: Response): Promise<void> {
 		try {
-			console.log(req.body);
 			const user = await User.find({
 				$or: [{ email: req.body.email }, { phoneNumber: req.body.phoneNumber }],
 			});

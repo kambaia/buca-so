@@ -8,7 +8,6 @@ class authUsersController {
 	public async authintication(req: Request, res: Response): Promise<Response> {
 		try {
 			const { email, password } = req.body;
-			console.log(email, password);
 			const user = await User.findOne({ email }).select('+password').populate('permission', 'level type role');
 			if (!user)
 				return res.json({ message: "E-mail ou  palavra pass incorreta" });
@@ -19,8 +18,6 @@ class authUsersController {
 				const refreshToken = await GeneteRefreshToken.execute(user._id.toString());
 				const token = authToke(user._id.toString());
 				const permision = user.permission as any;
-
-				console.log(permision);
 
 				const newUser = {
 					_id: user._id,

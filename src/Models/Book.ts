@@ -1,5 +1,4 @@
 import mongoose, { Model, Schema } from "mongoose";
-import { IAuthor } from "../interfaces/AuthorInterface";
 import { IBook } from "../interfaces/BookInterface";
 
 const bookSchema: Schema = new Schema(
