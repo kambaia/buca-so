@@ -1,0 +1,49 @@
+após devidamente configurado, é só entrar no mongodb via shell:
+
+mongo
+para sair do mongodb, basta rodar o comando: exit.
+
+const studentId = Math.floor(Math.random()*900000) + 100000;
+
+Instalação no Ubuntu 20.04
+Atualizações e dependências
+sudo apt update
+
+sudo apt install dirmngr gnupg apt-transport-https ca-certificates software-properties-common
+
+Download
+
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+
+Adicionar o repositório
+
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+
+Atualizar o repositório
+
+sudo apt update
+
+Instalar
+
+sudo apt install mongodb-org
+
+Verificando se já foi inicializado
+
+Adicionar na inicialização automática NÃO é recomendado
+
+sudo systemctl status mongod
+
+Inicializando
+
+sudo systemctl start mongod
+
+Rodando
+
+mongo
+
+KEY_AUTH=
+MONGO_SERVER_KEY=
+
+docker run -v ~/docker --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=mongodb_giap -e MONGO_INITDB_ROOT_PASSWORD=mongo123 mong
+
+

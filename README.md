@@ -1,2 +1,2 @@
-# PIA-PAGAMENTO INSTITUICIONAL ANGOLANO
-O SISTEMA VISA PERMITER QUALQUER ESTUDANTE OU ENCARREGADO QUE PERTENCE A UMA INSTITUIÇÃO FAZER O PAGEMNTOS AS PROPINAS, TANTO A UMA UNIVERSIDADE OU AUM COLÉGIO
+# Boca Só
+Boca Só is an online book platform where all Angolans and the world itself. You will be able to find great works and culture from our country and from other continents.
