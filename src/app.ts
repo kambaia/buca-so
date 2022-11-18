@@ -2,7 +2,6 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import path from 'path'
-import firebaseAdmin from 'firebase-admin';
 import {
   authorRouter,
   bookRouter,
@@ -13,14 +12,12 @@ import { categoryRouter } from './routers/category';
 dotenv.config()
 
 let db = require('./config/database/db')
-let serviceAccountKey = require('./config/firebase/serviceAccountKey.json');
 class App {
   public express: express.Application
   public constructor() {
     this.express = express()
     this.middlewares()
     this.database()
-    this.firebaseAdminConfig();
     this.main_routes()
     this.system_router()
   }
@@ -38,11 +35,6 @@ class App {
     db(
       `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}?authSource=admin`,
     )
-  }
-  private firebaseAdminConfig(): void {
-    firebaseAdmin.initializeApp({
-      credential: firebaseAdmin.credential.cert(serviceAccountKey)
-    });
   }
   private system_router(): void {
     this.express.use(userRouter);

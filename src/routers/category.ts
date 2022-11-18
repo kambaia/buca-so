@@ -8,6 +8,6 @@ categoryRouter.post("/api/category", categoryController.saveCategory);
 categoryRouter.get("/api/categorys/", categoryController.listAllCategory);
 categoryRouter.get("/api/category/:categoryId", categoryController.listOneCategory);
 categoryRouter.put("/api/category/:categoryId", categoryController.updateCategory);
-categoryRouter.delite("/api/category/:categoryId", categoryController.deleteCategory);
+categoryRouter.delete("/api/category/:categoryId", categoryController.deleteCategory);
 
 

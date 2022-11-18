@@ -1,5 +1,5 @@
 import mongoose, { Model, Schema } from "mongoose";
-import { IUser, Gender } from '../interfaces/UserInterface';
+import { IUser } from '../interfaces/UserInterface';
 import AuthService from "../services/auth";
 import logger from '../config/logger';
 export enum CUSTOM_VALIDATION {
